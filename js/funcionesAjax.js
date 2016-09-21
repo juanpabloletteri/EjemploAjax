@@ -25,8 +25,9 @@ alert("segundo");
 }
 function MostrarSinParametros()
 {
-	$.ajax({url:"nexoTexto.php"}).then(function ok(respuesta){
-		$("#principal").html(retorno);
+	$.ajax({url:"nexoTexto.php"})
+	.then(function ok(respuesta){
+		$("#principal").html(respuesta);
 		//alert("Respuesta");
 	},function mal(error){
 		alert("error");
@@ -49,7 +50,8 @@ function MostrarSinParametros()
 
 function Mostrar(queMostrar)
 {
-	$ajax({url:"nexo.php",type:"post",data:{queHacer:queMostrar}})
+	
+	$.ajax({url:"nexo.php",type:"post",data:{queHacer:queMostrar}})
 	.then(function(exito){
 		$("#principal").html(exito);
 	},function(error){
